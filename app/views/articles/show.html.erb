@@ -1,14 +1,14 @@
-<h2><%= @article.title %></h2>
+<div>
+  <h2><%= @article.title %></h2>
+  <%= link_to "Delete",
+    article_path(@article),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <%= link_to "Edit article", edit_article_path(@article) %>
+</div>
+
+<br><br>
 <p><%= @article.content %></p>
-
-<br><br>
-<%= link_to "Delete",
-  article_path(@article),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-
-<br><br>
-<%= link_to "Edit article", edit_article_path(@article) %>
 
 <br><br>
 <%= link_to "Back", articles_path %>
